@@ -22,7 +22,8 @@
     "lint": "tsdx lint src test",
     "size": "size-limit",
     "analyze": "size-limit --why",
-    "docs": "typedoc --options typedoc.json"
+    "docs": "typedoc --options typedoc.json",
+    "esbuild": "esbuild ./dist/reactfire.esm.js --outfile=./reactfire.js --define:process.env.NODE_ENV=\\\"production\\\" --external:react --minify --format=esm --bundle"
   },
   "peerDependencies": {
     "firebase": "^8.1.1",
@@ -98,6 +99,7 @@
     "typescript": "^4.2.4"
   },
   "dependencies": {
+    "esbuild": "^0.12.14",
     "rxfire": "5.0.0-rc.1",
     "rxjs": "^6.6.3 || ^7.0.1"
   },
